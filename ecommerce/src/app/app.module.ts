@@ -8,6 +8,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -19,9 +22,7 @@ import { CartComponent } from './components/cart/cart.component';
     ProductsComponent,
     CartComponent
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, RouterModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
