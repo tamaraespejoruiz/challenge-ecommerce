@@ -78,7 +78,7 @@ export class CardComponent implements OnInit {
       {
         this.products = responseProducts;
         let prueba = this.products[0]
-        console.log("El primer objeto es", prueba);
+        //console.log("El primer objeto es", prueba);
         //console.log("LINK PRIMER ELEMENTO",this.productsService.getLink(prueba));
         //console.log("FORMATO PRECIO",this.productsService.getformatPrecioArgentina(prueba));
         //console.log("ES ESTE", prueba.id_subcategoria)

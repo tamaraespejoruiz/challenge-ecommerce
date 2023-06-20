@@ -1,4 +1,4 @@
-<div class="container">
+<div class="shopping-cart">
     <h2>Lista de compras</h2>
     <table mat-table [dataSource]="dataSource">
         <!-- Cantidad -->
@@ -31,9 +31,11 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      <p>Total: {{total()}}</p>
-      <button>Comprar</button>
-      <button> Vaciar carrito</button>
+      <p>Precio total: {{total()}}</p>
+      <div class="button-cart">
+        <button>Comprar</button>
+        <button> Vaciar carrito</button>
+      </div>
       <!-- 
       <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
        -->
