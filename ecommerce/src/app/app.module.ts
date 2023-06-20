@@ -10,19 +10,18 @@ import { ProductsComponent } from './pages/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { PagesModule } from './pages/pages.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageFooterComponent,
-    PageHeaderComponent,
-    HomeComponent,
-    SignUpComponent,
-    ProductsComponent,
-    CartComponent
   ],
-  imports: [BrowserModule, RouterModule, AppRoutingModule],
+  imports: [
+    BrowserModule, 
+    RouterModule, 
+    AppRoutingModule,
+    PagesModule],
   providers: [],
   bootstrap: [AppComponent]
 })

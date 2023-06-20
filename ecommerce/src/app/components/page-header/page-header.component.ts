@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageHeaderComponent implements OnInit {
 
+  hidden = false;
+
+
+  toggleBadgeVisibility() {
+    this.hidden = !this.hidden;
+  }
+  
   constructor() { }
 
   ngOnInit(): void {
