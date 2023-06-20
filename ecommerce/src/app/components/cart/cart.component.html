@@ -1,1 +1,40 @@
-<p>cart works!</p>
+<div class="container">
+    <h2>Lista de compras</h2>
+    <table mat-table [dataSource]="dataSource">
+        <!-- Cantidad -->
+        <ng-container matColumnDef="Cantidad">
+          <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+          <td mat-cell *matCellDef="let element"> {{element.cantidad}} </td>
+        </ng-container>      
+        <!-- Titulo -->
+        <ng-container matColumnDef="Titulo">
+          <th mat-header-cell *matHeaderCellDef> Titulo </th>
+          <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+        </ng-container> 
+        <!-- Precio -->
+        <ng-container matColumnDef="Precio">
+          <th mat-header-cell *matHeaderCellDef> Precio </th>
+          <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+        </ng-container>
+        <!-- Eliminar -->
+        <ng-container matColumnDef="Eliminar">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <div>
+                    <button mat-button color="primary" (click)="downQuantity(element)">-</button>
+                    <span>{{element.cantidad}}</span>
+                    <button mat-button color="primary" (click)="upQuantity(element)">+</button>
+                </div>
+            </td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <p>Total: {{total()}}</p>
+      <button>Comprar</button>
+      <button> Vaciar carrito</button>
+      <!-- 
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+       -->
+</div>

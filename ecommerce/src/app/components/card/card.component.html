@@ -1,0 +1,19 @@
+<div class="container">
+  <mat-card class="card" *ngFor='let product of products'>
+    <div *ngIf="product.stock > 0">
+      <mat-card-header>
+        <mat-card-title-group>
+          <mat-card-title class="title"> {{product.nombre}} </mat-card-title>
+          <mat-card-subtitle class="subtitle">{{obtenerNombresSubcategorias(product)}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <img mat-card-md-image [src]=this.productsService.getLink(product)  alt="mio">
+      </mat-card-header>
+      <mat-card-content class="price">
+        {{this.productsService.getformatPrecioArgentina(product)}}
+      </mat-card-content>
+      <mat-card-actions class="button-cart">
+        <button (click)="onClick()" color="primary" mat-raised-button mat-flat-button >Agregar</button>
+      </mat-card-actions>
+    </div>
+</mat-card>
+</div>
